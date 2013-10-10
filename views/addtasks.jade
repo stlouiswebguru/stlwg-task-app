@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  p fill out the form below to add a task
+
+  form(action='/addtask', method='post')
+    label(for='piority') priority
+    input(id='priority', type='hidden', value='high', placeholder='', name='priority')
+
+    #faux-container
+      span(id='faux-priority') high
+      ul#faux-input-ul(style='display:none')
+        li high
+        li medium
+        li.last low
+
+    label(for='title') task title
+    input(id='title', type='text', value='', placeholder='', name='title')
+
+    label(for='date') date
+    input(id='date', type='text', value='', placeholder='', name='date')
+
+    label(for='description') task description
+    textarea(id='description', type='text', name='description')
+
+    input(type='submit', value='add task')

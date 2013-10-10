@@ -1,0 +1,38 @@
+doctype 5
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    link(rel='stylesheet', href='/stylesheets/base.css')
+    link(rel='stylesheet', href='/stylesheets/skeleton.css')
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='shortcut icon', href='/images/favicon.png')
+    link(rel='apple-touch-icon-precomposed', href='/images/apple-touch-icon-precomposed.png')
+  body
+    header
+      div.orange#bg1
+      div.orange#bg2
+      div.orange#bg3
+    
+    .sixteen-columns.pad-it
+      block content
+
+      footer
+        p &copy; 2012 task sharing v0.0.1 by 
+          a(href='http://www.destinwebguru.com', , target='_blank', title='destin web guru') destin web guru
+          &nbsp;|&nbsp;
+          a(href='/logout') logout
+
+    if page == 'viewtasks'
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+      script.
+        if (typeof jQuery == 'undefined') {
+          document.write('\<script src=\"/javascripts/jquery.js\"\>\<\/script\>')
+        }
+      script(src='/javascripts/viewtasks.js')
+
+    if page =='addtasks'
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+      script(src='/javascripts/addtasks.js')

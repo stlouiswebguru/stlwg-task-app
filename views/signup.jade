@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  // p Welcome to #{title}!
+  p enter your info below:
+
+  #signup-container
+    form(action='/signup', method='post')
+      
+      label(for='firstname') first name:
+      input(id='firstname', type='text', value='', placeholder='', name='firstname')
+      
+      label(for='lastname') last name:
+      input(id='lastname', type='text', value='', placeholder='', name='lastname')
+      
+      label(for='username') username
+      input(id='username', type='text', value='', placeholder='', name='username')
+      
+      label(for='password') password
+      input(id='password', type='password', value='', placeholder='', name='password')
+      
+      input(type='submit', value='sign up')
+
+    a(href='/', title='already a member?') already a member?

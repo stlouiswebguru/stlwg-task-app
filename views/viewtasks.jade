@@ -1,0 +1,60 @@
+extends layout
+
+block content
+  h1= title
+
+  #lightbox
+  #lightbox-content
+  #lb-content
+    #update-task-container
+      h2 update task
+      form#update-form(action='/updatetask', method='post')
+        label(for='piority') priority
+        input(id='priority', type='hidden', value='', placeholder='', name='priority')
+
+        #faux-container
+          span(id='faux-priority') high
+          ul#faux-input-ul(style='display:none')
+            li high
+            li medium
+            li.last low
+
+        label(for='title') task title
+        input(id='title', type='text', value='', placeholder='', name='title')
+
+        label(for='date') date
+        input(id='date', type='text', value='', placeholder='', name='date')
+
+        label(for='description') task description
+        textarea(id='description', type='text', name='description')
+
+        input(id='database-id', type='hidden', value='', placeholder='', name='_id')
+
+        input(id='submit-update', type='submit', value='update task') 
+      
+      button.cancel cancel
+
+    #delete-task-container
+      h2 delete task
+      form#delete-form(action='/deletetask', method='post')
+        p are you sure?
+
+        input(id='database-id-delete', type='hidden', value='', placeholder='', name='_id')
+
+        input(id='submit-delete', type='submit', value='delete') 
+      
+      button.cancel cancel
+
+  h2#high-priority-head.priority-section high priority
+  div#high-priority.task
+    .task-container no high priority tasks found
+
+  h2#medium-priority-head.priority-section medium priority
+  div#medium-priority.task
+    .task-container no medium priority tasks found
+  
+  h2#low-priority-head.priority-section low priority
+  div#low-priority.task
+    .task-container no low priority tasks found
+
+  a.big-orange-btn(href='/addtasks') add tasks

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  p enter your username and password:
+    
+  #login-container
+    form(action='/login', method='post')
+      
+      label(for='username') username
+      input(id='username', type='text', value='', placeholder='', name='username')
+      
+      label(for='password') password
+      input(id='password', type='password', value='', placeholder='', name='password')
+      
+      input(type='submit', value='log in')
+
+    a#not-a-member(href='/signup', title='not a member?') not a member?

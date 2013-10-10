@@ -1,0 +1,16 @@
+---
+applications:
+  .:
+    name: tsdwg
+    framework:
+      name: node
+      info:
+        mem: 64M
+        description: Node.js Application
+        exec: 
+    url: tsdwg.cloudfoundry.com
+    mem: 64M
+    instances: 1
+    services:
+      mongodb-bc5e6:
+        type: mongodb
